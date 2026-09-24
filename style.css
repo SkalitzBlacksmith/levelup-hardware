@@ -3,8 +3,8 @@
   --text: #f0f1f3;
   --accent: #58ef65;
   --content-width: 1120px;
-  --font-display: "Comfortaa", "Trebuchet MS", sans-serif;
-  --font-copy: "Audiowide", "Trebuchet MS", sans-serif;
+  --font-display: "Comfortaa", "Trebuchet MS", cursive;
+  --font-copy: "Audiowide", "Trebuchet MS", fantasy;
 }
 
 * {
