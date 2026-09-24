@@ -43,15 +43,6 @@ button {
   outline-offset: 5px;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
 .site-header {
   background: rgba(240, 241, 243, 0.035);
   border-bottom: 1px solid rgba(240, 241, 243, 0.06);
@@ -113,7 +104,7 @@ button {
   text-shadow: 0 0 12px rgba(88, 239, 101, 0.45);
 }
 
-.main-nav a[aria-current="page"] {
+.main-nav a.active {
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-decoration-thickness: 2px;
@@ -390,15 +381,15 @@ button {
     transition: transform 160ms ease, opacity 160ms ease;
   }
 
-  .menu-toggle[aria-expanded="true"] span:first-child {
+  .menu-toggle.is-open span:first-child {
     transform: translateY(7px) rotate(45deg);
   }
 
-  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  .menu-toggle.is-open span:nth-child(2) {
     opacity: 0;
   }
 
-  .menu-toggle[aria-expanded="true"] span:last-child {
+  .menu-toggle.is-open span:last-child {
     transform: translateY(-7px) rotate(-45deg);
   }
 
@@ -433,7 +424,7 @@ button {
     font-size: 17px;
   }
 
-  .main-nav a[aria-current="page"] {
+  .main-nav a.active {
     text-decoration: none;
     color: var(--accent);
   }

@@ -3,16 +3,13 @@ const mainNav = document.querySelector(".main-nav");
 
 if (menuButton && mainNav) {
   const closeMenu = () => {
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open navigatiemenu");
+    menuButton.classList.remove("is-open");
     mainNav.classList.remove("is-open");
   };
 
   menuButton.addEventListener("click", () => {
-    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
-    menuButton.setAttribute("aria-label", isOpen ? "Open navigatiemenu" : "Sluit navigatiemenu");
-    mainNav.classList.toggle("is-open", !isOpen);
+    menuButton.classList.toggle("is-open");
+    mainNav.classList.toggle("is-open");
   });
 
   mainNav.addEventListener("click", (event) => {
