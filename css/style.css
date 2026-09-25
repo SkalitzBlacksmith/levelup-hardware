@@ -224,6 +224,58 @@ button {
   font-weight: 400;
 }
 
+.newsletter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 64px;
+  margin-top: 96px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(240, 241, 243, 0.18);
+}
+
+.newsletter h2 {
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.newsletter-copy p,
+.newsletter-action p {
+  margin: 0;
+}
+
+.newsletter-action {
+  justify-self: end;
+  width: 100%;
+  max-width: 448px;
+}
+
+.newsletter-button {
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 24px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--background);
+  font-family: var(--font-copy);
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: 0 0 18px rgba(88, 239, 101, 0.28);
+  cursor: not-allowed;
+}
+
+.newsletter-action p {
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
 .about-layout {
   align-items: start;
 }
@@ -326,6 +378,10 @@ button {
   }
 
   .content-grid {
+    gap: 32px;
+  }
+
+  .newsletter {
     gap: 32px;
   }
 
@@ -451,6 +507,22 @@ button {
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+
+  .newsletter {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 64px;
+    padding-top: 32px;
+  }
+
+  .newsletter h2 {
+    font-size: 22px;
+  }
+
+  .newsletter-action {
+    justify-self: stretch;
+    max-width: none;
   }
 
   .copy-column p {
