@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="script.js" defer></script>
+  <script src="cart.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -47,6 +48,7 @@
           <h2>Gaming Laptop X1</h2>
           <p class="product-price">€1499</p>
           <p>Krachtige laptop met de nieuwste GPU voor ultieme gaming prestaties.</p>
+          <button class="add-to-cart" type="button" data-product="laptop">Voeg toe aan winkelwagen</button>
         </div>
       </article>
 
@@ -58,6 +60,7 @@
           <h2>Custom Gaming PC</h2>
           <p class="product-price">€1999</p>
           <p>Op maat gemaakte desktop met topkwaliteit componenten voor maximale snelheid.</p>
+          <button class="add-to-cart" type="button" data-product="pc">Voeg toe aan winkelwagen</button>
         </div>
       </article>
 
@@ -69,8 +72,16 @@
           <h2>Pro Gaming Headset</h2>
           <p class="product-price">€199</p>
           <p>Comfortabele headset met surround sound voor een meeslepende game-ervaring.</p>
+          <button class="add-to-cart" type="button" data-product="headset">Voeg toe aan winkelwagen</button>
         </div>
       </article>
+    </section>
+
+    <section class="cart" id="winkelwagen">
+      <h2>Winkelwagen</h2>
+      <p class="cart-empty">Je winkelwagen is nog leeg.</p>
+      <ul class="cart-items"></ul>
+      <p class="cart-total">Totaal: <strong>€ 0,00</strong></p>
     </section>
   </main>
 </body>
