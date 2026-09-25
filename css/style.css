@@ -691,3 +691,23 @@ button {
     align-items: flex-start;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-glow {
+    animation: home-glow 6s ease-in-out infinite;
+  }
+
+  @keyframes home-glow {
+    0%, 100% {
+      text-shadow:
+        0 0 6px rgba(88, 239, 101, 0.8),
+        0 0 26px rgba(88, 239, 101, 0.42);
+    }
+
+    50% {
+      text-shadow:
+        0 0 8px rgba(88, 239, 101, 0.88),
+        0 0 30px rgba(88, 239, 101, 0.52);
+    }
+  }
+}
