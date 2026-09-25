@@ -692,23 +692,33 @@ button {
   }
 }
 
+.home-glow {
+  position: relative;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .home-glow {
-    animation: home-glow 3.6s ease-in-out infinite;
+  .home-glow::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    color: transparent;
+    text-shadow:
+      0 0 12px rgba(88, 239, 101, 1),
+      0 0 36px rgba(88, 239, 101, 0.82),
+      0 0 64px rgba(88, 239, 101, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    will-change: opacity;
+    animation: home-glow-pulse 3.6s ease-in-out infinite;
   }
 
-  @keyframes home-glow {
+  @keyframes home-glow-pulse {
     0%, 100% {
-      text-shadow:
-        0 0 6px rgba(88, 239, 101, 0.8),
-        0 0 26px rgba(88, 239, 101, 0.42);
+      opacity: 0;
     }
 
     50% {
-      text-shadow:
-        0 0 12px rgba(88, 239, 101, 1),
-        0 0 36px rgba(88, 239, 101, 0.82),
-        0 0 64px rgba(88, 239, 101, 0.45);
+      opacity: 1;
     }
   }
 }
