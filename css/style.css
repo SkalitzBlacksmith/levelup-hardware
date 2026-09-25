@@ -694,7 +694,7 @@ button {
 
 @media (prefers-reduced-motion: no-preference) {
   .home-glow {
-    animation: home-glow 6s ease-in-out infinite;
+    animation: home-glow 3.6s ease-in-out infinite;
   }
 
   @keyframes home-glow {
@@ -706,8 +706,9 @@ button {
 
     50% {
       text-shadow:
-        0 0 8px rgba(88, 239, 101, 0.88),
-        0 0 30px rgba(88, 239, 101, 0.52);
+        0 0 12px rgba(88, 239, 101, 1),
+        0 0 36px rgba(88, 239, 101, 0.82),
+        0 0 64px rgba(88, 239, 101, 0.45);
     }
   }
 }
