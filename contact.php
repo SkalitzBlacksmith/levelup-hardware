@@ -1,0 +1,32 @@
+<?php
+$pageTitle = "Contact";
+$pageDescription = "Stel je vraag over gaming hardware of onderhoud aan LevelUp Hardware.";
+$activePage = "contact";
+$name = $email = $subject = $message = "";
+$errors = [];
+$submitted = false;
+include __DIR__ . "/includes/header.php";
+?>
+<main class="page-shell">
+  <section class="page-hero"><h1 class="home-glow" data-text="Contact">Contact</h1><p class="hero-subtitle">We helpen je graag</p></section>
+  <section class="content-grid contact-layout">
+    <div><h2>Advies voor jouw setup</h2><p>Een vraag over onze gear, een upgrade of onderhoud? Vul het formulier in.</p><address>Terheijdenseweg 350<br>4826 AA Breda</address><p class="form-note">Voorbeeldadres. Dit formulier is een schooldemo en verstuurt geen e-mail.</p><a class="detail-link" href="over-ons.php">Bekijk de locatie</a></div>
+    <div>
+      <?php if ($submitted): ?>
+        <h2>Bedankt, <?= htmlspecialchars($name) ?>!</h2><p>Je bericht over <?= htmlspecialchars($subject) ?> is verwerkt.</p>
+        <blockquote><?= nl2br(htmlspecialchars($message)) ?></blockquote><p class="form-note">Je bericht is alleen op deze pagina verwerkt en wordt niet opgeslagen of verstuurd.</p>
+        <a class="primary-button" href="contact.php">Nieuw bericht</a>
+      <?php else: ?>
+        <?php if ($errors): ?><div class="form-errors" role="alert"><ul><?php foreach ($errors as $error): ?><li><?= htmlspecialchars($error) ?></li><?php endforeach; ?></ul></div><?php endif; ?>
+        <form class="site-form" action="contact.php" method="post">
+          <label for="contact-name">Naam</label><input id="contact-name" name="naam" type="text" required maxlength="80" autocomplete="name" value="<?= htmlspecialchars($name) ?>">
+          <label for="contact-email">E-mailadres</label><input id="contact-email" name="email" type="email" required maxlength="254" autocomplete="email" value="<?= htmlspecialchars($email) ?>">
+          <label for="contact-subject">Onderwerp</label><input id="contact-subject" name="onderwerp" type="text" required maxlength="100" value="<?= htmlspecialchars($subject) ?>">
+          <label for="contact-message">Bericht (maximaal 1000 tekens)</label><textarea id="contact-message" name="bericht" rows="6" required maxlength="250"><?= htmlspecialchars($message) ?></textarea>
+          <div class="form-actions"><button class="primary-button" type="submit">Verstuur bericht</button><button class="secondary-button" type="button">Wis formulier</button></div>
+        </form>
+      <?php endif; ?>
+    </div>
+  </section>
+</main>
+<?php include __DIR__ . "/includes/footer.php"; ?>
