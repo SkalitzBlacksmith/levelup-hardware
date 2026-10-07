@@ -5,5 +5,6 @@
       <p>&copy; 2025 LevelUp Hardware</p>
     </div>
   </footer>
+<?php include __DIR__ . "/newsletter.php"; ?>
 </body>
 </html>

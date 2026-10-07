@@ -38,8 +38,8 @@ include __DIR__ . "/includes/header.php";
         <p>Nieuwe gear, tips en updates van LevelUp Hardware.</p>
       </div>
       <div class="newsletter-action">
-        <button class="newsletter-button" type="button" disabled>Schrijf je in voor de nieuwsbrief</button>
-        <p>Inschrijven binnenkort beschikbaar!</p>
+        <button class="newsletter-button" type="button" data-open-newsletter>Schrijf je in voor de nieuwsbrief</button>
+        <p>Mis geen nieuwe gear of tips.</p>
       </div>
     </section>
   </main>
