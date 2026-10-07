@@ -1,37 +1,9 @@
-<!doctype html>
-<html lang="nl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#24272c">
-  <meta name="description" content="Maak kennis met Daan van der Meer en de passie achter LevelUp Hardware in Breda.">
-  <title>Over ons | LevelUp Hardware</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.php">
-        <img src="assets/logo.png" alt="LevelUp Hardware" width="698" height="338">
-      </a>
-      <button class="menu-toggle" type="button">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="main-nav" id="main-nav">
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="over-ons.php" class="active">Over ons</a></li>
-          <li><a href="producten.php">Producten</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+<?php
+$pageTitle = "Over ons";
+$pageDescription = "Maak kennis met Daan van LevelUp Hardware.";
+$activePage = "over-ons";
+include __DIR__ . "/includes/header.php";
+?>
   <main class="page-shell">
     <section class="page-hero">
       <h1 class="home-glow" data-text="Over Ons">Over Ons</h1>

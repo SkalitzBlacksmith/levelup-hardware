@@ -1,38 +1,10 @@
-<!doctype html>
-<html lang="nl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#24272c">
-  <meta name="description" content="Ontdek de gaming laptop, custom gaming PC en pro gaming headset van LevelUp Hardware.">
-  <title>Producten | LevelUp Hardware</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="script.js" defer></script>
-  <script src="cart.js" defer></script>
-</head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.php">
-        <img src="assets/logo.png" alt="LevelUp Hardware" width="698" height="338">
-      </a>
-      <button class="menu-toggle" type="button">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="main-nav" id="main-nav">
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="over-ons.php">Over ons</a></li>
-          <li><a href="producten.php" class="active">Producten</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+<?php
+$pageTitle = "Producten";
+$pageDescription = "Gaming laptops, desktops en accessoires voor jouw setup.";
+$activePage = "producten";
+$useCart = true;
+include __DIR__ . "/includes/header.php";
+?>
   <main class="page-shell">
     <section class="page-hero">
       <h1 class="home-glow" data-text="Producten">Producten</h1>
