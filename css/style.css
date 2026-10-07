@@ -821,3 +821,19 @@ button {
   .theme-toggle { margin-left: auto; }
   .menu-toggle { order: 3; }
 }
+
+.newsletter-button { cursor: pointer; }
+.primary-button { display: inline-block; padding: 12px 20px; border: 2px solid var(--accent); border-radius: 8px; background: var(--accent); color: var(--background); cursor: pointer; }
+.newsletter-modal { width: min(520px, calc(100% - 32px)); padding: 32px; border: 2px solid var(--accent); border-raduis: 16px; background: var(--background); color: var(--text); max-height: 90vh; }
+.newsletter-modal::backdrop { background: rgba(0, 0, 0, .75); }
+.newsletter-modal h2 { font-family: var(--font-display); color: var(--accent); }
+.modal-close { float: right; border: 0; background: transparent; color: var(--text); font-size: 28px; cursor: pointer; }
+.site-form { display: grid; gap: 12px; }
+.site-form input:not([type=checkbox]), .site-form select, .site-form textarea { width: 100%; padding: 12px; border: 1px solid #777; border-radius: 6px; background: var(--background); color: var(--text); font: inherit; font-size: 14px; }
+.checkbox-label { display: flex; align-items: start; gap: 10px; font-size: 14px; }
+.checkbox-label input { margin-top: 6px; }
+.form-note { font-size: 12px; }
+.form-errors { padding: 20px; border: 2px solid #e85161; border-radius: 8px; }
+.form-errors a { text-decoration: underline; }
+.thank-you { max-width: 700px; margin: auto; }
+.thank-you .primary-button { margin-top: 20px; }
