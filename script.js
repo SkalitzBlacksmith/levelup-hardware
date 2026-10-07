@@ -20,3 +20,23 @@ if (menuButton && mainNav) {
     if (event.key === "Escape") closeMenu();
   });
 }
+const themeButton = document.querySelector(".theme-toggle");
+let savedTheme = null;
+try { savedTheme = localStorage.getItem("levelup-theme"); } catch (error) { /* Zonder opslag blijft de knop werken. */ }
+if (savedTheme === "light") document.body.classList.add("light-mode");
+
+function updateThemeButton() {
+  const light = document.body.classList.contains("light-mode");
+  themeButton.textContent = light ? "Donker thema" : "Licht thema";
+  themeButton.setAttribute("aria-pressed", light);
+}
+
+if (themeButton) {
+  updateThemeButton();
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    const theme = document.body.classList.contains("light-mode") ? "light" : "dark";
+    try { localStorage.setItem("levelup-them", theme); } catch (error) { /* Opslag is optioneel. */ }
+    updateThemeButton();
+  });
+}
