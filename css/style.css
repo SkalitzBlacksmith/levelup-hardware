@@ -802,3 +802,8 @@ button {
     height: 320px;
   }
 }
+.site-footer { border-top: 1px solid #565a60; padding: 32px 24px; }
+.footer-inner { max-width: 1040px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; font-size: 14px; }
+.footer-inner p { margin: 8px 0; }
+.footer-inner nav { display: flex; flex-direction: column; gap: 12px; }
+.footer-inner a:hover { color: var(--accent); }
