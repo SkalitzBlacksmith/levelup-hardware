@@ -863,3 +863,7 @@ button {
 .product-filters label { display: block; margin-bottom: 8px; font-size: 13px; }
 .product-filters .primary-button { font-size: 13px; }
 @media (max-width: 700px) { .product-filters > div { width: 100%; } }
+
+.cart-controls { display: flex; flex-wrap: wrap; gap: 8px; flex-shrink: 0; }
+.cart-count { font-size: 16px; }
+@media (max-width: 700px) { .cart-items li { flex-direction: column; } }
