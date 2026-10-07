@@ -858,3 +858,8 @@ button {
 .spec-list div { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 14px 0; border-bottom: 1px solid #777; }
 .spec-list dd { margin: 0; }
 @media (max-width: 700px) { .product-detail h1 { font-size: 25px; } .spec-list div { font-size: 13px; } }
+
+.product-filters { display: flex; align-items: end; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
+.product-filters label { display: block; margin-bottom: 8px; font-size: 13px; }
+.product-filters .primary-button { font-size: 13px; }
+@media (max-width: 700px) { .product-filters > div { width: 100%; } }
