@@ -5,6 +5,18 @@ $activePage = "contact";
 $name = $email = $subject = $message = "";
 $errors = [];
 $submitted = false;
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = is_string($_POST["naam"] ?? null) ? trim($_POST["naam"]) : "";
+    $email = is_string($_POST["email"] ?? null) ? trim($_POST["email"]) : "";
+    $subject = is_string($_POST["onderwerp"] ?? null) ? trim($_POST["onderwerp"]) : "";
+    $message = is_string($_POST["bericht"] ?? null) ? trim($_POST["bericht"]) : "";
+    if ($name === "" || strlen($name) > 80) $errors[] = "Vul een naam van maximaal 80 tekens in.";
+    if (strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Vul een geldig e-mailadres in.";
+    if ($subject === "" || strlen($subject) > 100) $errors[] = "Vul een onderwerp van maximaal 100 tekens in.";
+    if ($message === "" || strlen($message) > 1000) $errors[] = "Vul een bericht van maximaal 1000 tekens in.";
+    $submitted = count($errors) === 0;
+    if ($errors) http_response_code(422);
+}
 include __DIR__ . "/includes/header.php";
 ?>
 <main class="page-shell">
