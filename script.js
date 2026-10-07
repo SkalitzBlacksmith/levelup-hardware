@@ -5,11 +5,13 @@ if (menuButton && mainNav) {
   const closeMenu = () => {
     menuButton.classList.remove("is-open");
     mainNav.classList.remove("is-open");
+    menuButton.setAttribute("aria-expanded", "false");
   };
 
   menuButton.addEventListener("click", () => {
     menuButton.classList.toggle("is-open");
     mainNav.classList.toggle("is-open");
+    menuButton.setAttribute("aria-expanded", mainNav.classList.contains("is-open"));
   });
 
   mainNav.addEventListener("click", (event) => {
