@@ -34,6 +34,7 @@ $activePage = $activePage ?? "";
           <li><a href="index.php" class="<?= $activePage === 'index' ? 'active' : '' ?>">Home</a></li>
           <li><a href="over-ons.php" class="<?= $activePage === 'over-ons' ? 'active' : '' ?>">Over ons</a></li>
           <li><a href="producten.php" class="<?= $activePage === 'producten' ? 'active' : '' ?>">Producten</a></li>
+          <li><a href="contact.php" class="<?= $activePage === 'contact' ? 'active' : '' ?>">Contact</a></li>
         </ul>
       </nav>
       <button class="theme-toggle" type="button" aria-pressed="false">Licht thema</button>
