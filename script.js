@@ -40,3 +40,17 @@ if (themeButton) {
     updateThemeButton();
   });
 }
+
+const newsletterModal = document.querySelector("#newsletter-modal");
+if (newsletterModal) {
+  document.querySelectorAll("[data-open-newsletter]").forEach((button) => {
+    button.addEventListener("click", () => newsletterModal.showModal());
+  });
+  newsletterModal.querySelector(".modal-close").addEventListener("click", () => newsletterModal.close());
+  newsletterModal.addEventListener("click", (event) => {
+    if (event.target === newsletterModal) {
+      const box = newsletterModal.getBoundingClientRect();
+      if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) newsletterModal.close();
+    }
+  });
+}
