@@ -36,6 +36,7 @@ $activePage = $activePage ?? "";
           <li><a href="producten.php" class="<?= $activePage === 'producten' ? 'active' : '' ?>">Producten</a></li>
         </ul>
       </nav>
+      <button class="theme-toggle" type="button" aria-pressed="false">Licht thema</button>
     </div>
   </header>
 
