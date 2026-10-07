@@ -867,3 +867,12 @@ button {
 .cart-controls { display: flex; flex-wrap: wrap; gap: 8px; flex-shrink: 0; }
 .cart-count { font-size: 16px; }
 @media (max-width: 700px) { .cart-items li { flex-direction: column; } }
+
+.main-nav ul { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.contact-layout { align-items: start; }
+.contact-layout address { font-style: normal; }
+.contact-layout blockquote { margin: 24px 0; border-left: 3px solid var(--accent); padding-left: 20px; overflow-wrap: anywhere; }
+.form-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.secondary-button { background: transparent; border: 1px solid var(--accent); border-radius: 8px; padding: 12px 20px; color: var(--text); font: inherit; cursor: pointer; }
+.footer-newsletter { background: transparent; color: var(--text); padding: 0; text-align: left; border: 0; cursor: pointer; font: inherit; }
+@media (max-width: 900px) and (min-width: 701px) { .header-inner { gap: 12px; } .brand { width: 140px; } .header-inner { grid-template-columns: 140px minmax(0, 1fr) auto; } .main-nav a { font-size: 13px; } }
