@@ -807,3 +807,17 @@ button {
 .footer-inner p { margin: 8px 0; }
 .footer-inner nav { display: flex; flex-direction: column; gap: 12px; }
 .footer-inner a:hover { color: var(--accent); }
+
+.header-inner { grid-template-columns: 180px minmax(0, 1fr) auto; gap: 20px; }
+.brand { width: 180px; }
+.main-nav a { font-size: 17px; }
+.theme-toggle { padding: 10px 12px; border: 1px solid var(--accent); border-radius: 8px; background: transparent; color: var(--text); cursor: pointer; font-size: 12px; }
+.light-mode { --background: #f4f5f7; --text: #24272c; --accent: #187b29; }
+.light-mode .page-hero h1, .light-mode .hero-subtitle, .light-mode .product-copy h2 { color: #24272c; text-shadow: none; }
+.light-mode .home-glow::after { display: none; }
+.light-mode .product-row { background: #e5e8ec; }
+@media (max-width: 700px) {
+  .header-inner { flex-wrap: wrap; gap: 12px; }
+  .theme-toggle { margin-left: auto; }
+  .menu-toggle { order: 3; }
+}
