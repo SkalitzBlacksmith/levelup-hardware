@@ -12,11 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="script.js" defer></script>
+
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.php">
         <img src="assets/logo.png" alt="LevelUp Hardware" width="698" height="338">
       </a>
       <button class="menu-toggle" type="button">
@@ -24,9 +25,9 @@
       </button>
       <nav class="main-nav" id="main-nav">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="over-ons.html">Over ons</a></li>
-          <li><a href="producten.html">Producten</a></li>
+          <li><a href="index.php" class="active">Home</a></li>
+          <li><a href="over-ons.php">Over ons</a></li>
+          <li><a href="producten.php">Producten</a></li>
         </ul>
       </nav>
     </div>
