@@ -1,54 +1,70 @@
-const products = {
-  laptop: { name: "Gaming Laptop X1", price: 1499 },
-  pc: { name: "Custom Gaming PC", price: 1999 },
-  headset: { name: "Pro Gaming Headset", price: 199 }
-};
+let cart = {};
+try {
+  const storedCart = JSON.parse(localStorage.getItem("levelup-cart") || "{}");
+  if (storedCart && typeof storedCart === "object" && !Array.isArray(storedCart)) {
+    for (const id in storedCart) {
+      const item = storedCart[id];
+      if (item && typeof item.name === "string" && Number.isFinite(item.price) && item.price > 0 && Number.isInteger(item.quantity) && item.quantity > 0 && item.quantity <= 99) cart[id] = item;
+    }
+  }
+} catch (error) { cart = {}; }
 
-const cart = {};
 const cartItems = document.querySelector(".cart-items");
 const cartEmpty = document.querySelector(".cart-empty");
 const cartTotal = document.querySelector(".cart-total strong");
-const euro = new Intl.NumberFormat("nl-NL", {
-  style: "currency",
-  currency: "EUR"
-});
+const cartCount = document.querySelector(".cart-count");
+const euro = new Intl.NumberFormat("nl-NL", { style: "currency", currency: "EUR" });
+
+function saveCart() {
+  try { localStorage.setItem("levelup-cart", JSON.stringify(cart)); } catch (error) { /* De winkelwagen werkt ook zonder opslag. */ }
+}
 
 function showCart() {
+  if (!cartItems) return;
   cartItems.innerHTML = "";
   let total = 0;
-
-  for (const [id, quantity] of Object.entries(cart)) {
-    const product = products[id];
-    const itemTotal = product.price * quantity;
-    total += itemTotal;
-
+  for (const id in cart) {
+    const product = cart[id];
+    total += product.price * product.quantity;
     const item = document.createElement("li");
     const description = document.createElement("span");
-    const removeButton = document.createElement("button");
-
-    description.textContent = `${quantity}× ${product.name} — ${euro.format(itemTotal)}`;
-    removeButton.type = "button";
-    removeButton.textContent = "Verwijder";
-
-    removeButton.addEventListener("click", () => {
-      delete cart[id];
-      showCart();
+    const controls = document.createElement("div");
+    const less = document.createElement("button");
+    const more = document.createElement("button");
+    const remove = document.createElement("button");
+    description.textContent = product.quantity + "× " + product.name + " — " + euro.format(product.price * product.quantity);
+    less.textContent = "−";
+    more.textContent = "+";
+    remove.textContent = "Verwijder";
+    less.type = more.type = remove.type = "button";
+    less.setAttribute("aria-label", "Eén minder " + product.name);
+    more.setAttribute("aria-label", "Eén meer " + product.name);
+    less.addEventListener("click", () => {
+      product.quantity--;
+      if (product.quantity === 0) delete cart[id];
+      saveCart(); showCart();
     });
-
-    item.append(description, removeButton);
+    more.addEventListener("click", () => {
+      if (product.quantity < 99) product.quantity++;
+      saveCart(); showCart();
+    });
+    remove.addEventListener("click", () => { delete cart[id]; saveCart(); showCart(); });
+    controls.className = "cart-controls";
+    controls.append(less, more, remove);
+    item.append(description, controls);
     cartItems.append(item);
   }
-
   cartEmpty.hidden = Object.keys(cart).length > 0;
   cartTotal.textContent = euro.format(total);
+  if (cartCount) cartCount.textContent = Object.keys(cart).length;
 }
 
 document.querySelectorAll(".add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
     const id = button.dataset.product;
-    cart[id] = (cart[id] || 0) + 1;
-    showCart();
+    if (!cart[id]) cart[id] = { name: button.dataset.name, price: Number(button.dataset.price), quantity: 0 };
+    if (cart[id].quantity < 99) cart[id].quantity++;
+    saveCart(); showCart();
   });
 });
-
 showCart();
