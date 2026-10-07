@@ -43,5 +43,4 @@ include __DIR__ . "/includes/header.php";
       </div>
     </section>
   </main>
-</body>
-</html>
+<?php include __DIR__ . "/includes/footer.php"; ?>

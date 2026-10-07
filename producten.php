@@ -56,5 +56,4 @@ include __DIR__ . "/includes/header.php";
       <p class="cart-total">Totaal: <strong>€ 0,00</strong></p>
     </section>
   </main>
-</body>
-</html>
+<?php include __DIR__ . "/includes/footer.php"; ?>
