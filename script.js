@@ -24,7 +24,7 @@ if (menuButton && mainNav) {
 }
 const themeButton = document.querySelector(".theme-toggle");
 let savedTheme = null;
-try { savedTheme = localStorage.getItem("levelup-theme"); } catch (error) { /* Zonder opslag blijft de knop werken. */ }
+try { savedTheme = localStorage.getItem("levelup-theme"); } catch (error) {  }
 if (savedTheme === "light") document.body.classList.add("light-mode");
 
 function updateThemeButton() {
@@ -38,7 +38,7 @@ if (themeButton) {
   themeButton.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
     const theme = document.body.classList.contains("light-mode") ? "light" : "dark";
-    try { localStorage.setItem("levelup-them", theme); } catch (error) { /* Opslag is optioneel. */ }
+    try { localStorage.setItem("levelup-them", theme); } catch (error) 
     updateThemeButton();
   });
 }
