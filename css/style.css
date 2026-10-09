@@ -268,7 +268,7 @@ button {
   line-height: 1.4;
   text-align: center;
   box-shadow: 0 0 18px rgba(88, 239, 101, 0.28);
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 .newsletter-action p {
@@ -606,6 +606,8 @@ button {
 }
 
 .cart-items li {
+  min-width: 0;
+  overflow-wrap: anywhere;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -816,10 +818,6 @@ button {
   .menu-toggle {
     order: 3;
   }
-}
-
-.newsletter-button {
-  cursor: pointer;
 }
 
 .primary-button {
@@ -1115,5 +1113,23 @@ button {
   }
   .main-nav a {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-inner {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+  .brand {
+    width: 112px;
+    flex-shrink: 0;
+  }
+  .theme-toggle {
+    padding: 8px;
+    font-size: 11px;
+  }
+  .menu-toggle {
+    flex-shrink: 0;
   }
 }
