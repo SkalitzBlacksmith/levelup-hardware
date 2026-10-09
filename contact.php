@@ -22,11 +22,10 @@ include __DIR__ . "/includes/header.php";
 <main class="page-shell">
   <section class="page-hero"><h1 class="home-glow" data-text="Contact">Contact</h1><p class="hero-subtitle">We helpen je graag</p></section>
   <section class="content-grid contact-layout">
-    <div><h2>Advies voor jouw setup</h2><p>Een vraag over onze gear, een upgrade of onderhoud? Vul het formulier in.</p><address>Terheijdenseweg 350<br>4826 AA Breda</address><p class="form-note">Voorbeeldadres. Dit formulier is een schooldemo en verstuurt geen e-mail.</p><a class="detail-link" href="over-ons.php">Bekijk de locatie</a></div>
+    <div><h2>Advies voor jouw setup</h2><p>Een vraag over onze gear, een upgrade of onderhoud? Vul het formulier in.</p><address>Terheijdenseweg 350<br>4826 AA Breda</address><p class="form-note">Voorbeeldadres. Dit formulier is een demo en verstuurt geen e-mail.</p><a class="detail-link" href="over-ons.php">Bekijk de locatie</a></div>
     <div>
       <?php if ($submitted): ?>
         <h2>Bedankt, <?= htmlspecialchars($name) ?>!</h2><p>Je bericht over <?= htmlspecialchars($subject) ?> is verwerkt.</p>
-        <blockquote><?= nl2br(htmlspecialchars($message)) ?></blockquote><p class="form-note">Je bericht is alleen op deze pagina verwerkt en wordt niet opgeslagen of verstuurd.</p>
         <a class="primary-button" href="contact.php">Nieuw bericht</a>
       <?php else: ?>
         <?php if ($errors): ?><div class="form-errors" role="alert"><ul><?php foreach ($errors as $error): ?><li><?= htmlspecialchars($error) ?></li><?php endforeach; ?></ul></div><?php endif; ?>

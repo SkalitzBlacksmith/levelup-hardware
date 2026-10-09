@@ -25,7 +25,6 @@ include __DIR__ . "/includes/header.php";
     <h1>Bedankt, <?= htmlspecialchars($name) ?>!</h1>
     <p><?= htmlspecialchars($name) ?>, je bent ingeschreven voor de nieuwsbrief.</p>
     <p>Je gebruikte e-mailadres: <?= htmlspecialchars($email) ?>.</p>
-    <p class="form-note">Dit is een demonstratie van formulierverwerking. Je gegevens worden niet opgeslagen en je ontvangt geen e-mail.</p>
   <?php endif; ?>
   <a class="primary-button" href="index.php">Terug naar home</a>
 </main>
