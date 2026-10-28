@@ -16,13 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($subject === "" || strlen($subject) > 100) $errors[] = "Vul een onderwerp van maximaal 100 tekens in.";
     if ($message === "" || strlen($message) > 1000) $errors[] = "Vul een bericht van maximaal 1000 tekens in.";
     $token = is_string($_POST['token'] ?? null) ? $_POST['token'] : '';
+    if (time() - ($_SESSION['last_contact'] ?? 0) < 30) $errors[] = 'Je hebt zojuist iets verstuurd. Wacht even voordat je opnieuw verstuurt.';
     if (!hash_equals($_SESSION['token'], $token)) $errors[] = "De sessie is verlopen. Probeer opnieuw.";
     if (!$errors) {
         try {
             require __DIR__ . '/includes/database.php';
             $query = $db->prepare('INSERT INTO contactberichten (naam, email, onderwerp, bericht) VALUES (?, ?, ?, ?)');
             $query->execute([$name, $email, $subject, $message]);
-            $_SESSION['contact_sent'] = true;
+            $_SESSION['last_contact'] = time();
+            $_SESSION['contact_sent'] = $name;
             $_SESSION['token'] = bin2hex(random_bytes(32));
             header('Location: contact.php?verstuurd=1', true, 303);
             exit;
