@@ -885,7 +885,7 @@ button {
 }
 
 .light-mode .brand img {
-  filter: brightness(.52) saturate(1.5);
+  filter: drop-shadow(0 1px 2px rgba(35, 20, 50, .2));
 }
 
 .light-mode .site-form input:not([type=checkbox]),
@@ -1234,7 +1234,7 @@ button {
 
 .site-header { background: linear-gradient(90deg, #0f0b16 0%, #21182c 25%, #24272c 58%); }
 .light-mode .site-header {
-  background: linear-gradient(90deg, #e8e1ee, #f3eff8 45%, #faf9fc);
+  background: linear-gradient(90deg, #55485f, #a294af 55%, #eee7f4);
   box-shadow: 0 4px 16px rgba(50, 30, 65, .06);
 }
 
