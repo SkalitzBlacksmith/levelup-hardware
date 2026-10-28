@@ -68,3 +68,18 @@ document.querySelectorAll(".add-to-cart").forEach((button) => {
   });
 });
 showCart();
+
+const orderForm = document.querySelector('#order-form');
+if (orderForm) {
+  orderForm.addEventListener('submit', (event) => {
+    const items = {};
+    for (const id in cart) items[id] = cart[id].quantity;
+    if (Object.keys(items).length === 0) {
+      event.preventDefault();
+      cartEmpty.textContent = 'Voeg eerst een product toe aan je winkelwagen.';
+      cartEmpty.hidden = false;
+      return;
+    }
+    document.querySelector('#order-products').value = JSON.stringify(items);
+  });
+}
