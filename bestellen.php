@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $items = strlen($raw) <= 4096 ? json_decode($raw, true) : null;
     if (time() - ($_SESSION['last_order'] ?? 0) < 30) $errors[] = 'Je hebt zojuist iets verstuurd. Wacht even voordat je opnieuw verstuurt.';
     if (!hash_equals($_SESSION['token'], $token)) $errors[] = 'De sessie is verlopen. Probeer opnieuw.';
-    if ($name === '' || mb_mb_strlen($name) > 80) $errors[] = 'Vul een geldige naam in.';
+    if ($name === '' || mb_strlen($name) > 80) $errors[] = 'Vul een geldige naam in.';
     if (strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Vul een geldig e-mailadres in.';
     if (!is_array($items) || !$items || count($items) > count($products)) $errors[] = 'De winkelwagen is leeg of ongeldig.';
     $order = []; $totalCents = 0;
