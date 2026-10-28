@@ -35,6 +35,7 @@ function showCart() {
     description.textContent = product.quantity + "× " + product.name + " — " + euro.format(product.price * product.quantity);
     less.textContent = "−";
     more.textContent = "+";
+    more.disabled = product.quantity >= 99;
     remove.textContent = "Verwijder";
     less.type = more.type = remove.type = "button";
     less.setAttribute("aria-label", "Eén minder " + product.name);
@@ -56,7 +57,7 @@ function showCart() {
   }
   cartEmpty.hidden = Object.keys(cart).length > 0;
   cartTotal.textContent = euro.format(total);
-  if (cartCount) cartCount.textContent = Object.keys(cart).length;
+  if (cartCount) cartCount.textContent = Object.values(cart).reduce((count, product) => count + product.quantity, 0);
 }
 
 document.querySelectorAll(".add-to-cart").forEach((button) => {

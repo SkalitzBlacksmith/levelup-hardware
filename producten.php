@@ -14,6 +14,7 @@ if ($category !== "") {
 }
 $search = is_string($_GET["zoek"] ?? null) ? trim($_GET["zoek"]) : "";
 $sort = is_string($_GET["sort"] ?? null) ? $_GET["sort"] : "naam";
+if (!in_array($sort, ["naam", "laag", "hoog"], true)) $sort = "naam";
 if ($search !== "") {
     $visibleProducts = array_filter($visibleProducts, function ($product) use ($search) {
         return stripos($product["name"] . " " . $product["description"], $search) !== false;
@@ -21,7 +22,7 @@ if ($search !== "") {
 }
 uasort($visibleProducts, function ($a, $b) use ($sort) {
     if ($sort === "laag") return $a["price"] <=> $b["price"];
-    if ($sort === "hoog") return $a["price"] <=> $b["price"];
+    if ($sort === "hoog") return $b["price"] <=> $a["price"];
     return strcmp($a["name"], $b["name"]);
 });
 include __DIR__ . "/includes/header.php";
@@ -44,7 +45,7 @@ include __DIR__ . "/includes/header.php";
     <button class="primary-button" type="submit">Zoeken</button><a class="detail-link" href="producten.php">Wis filters</a>
   </form>
   <?php if (!$visibleProducts): ?><p>Geen producten gevonden. Probeer een andere zoekterm.</p><?php endif; ?>
-  <p class="product-count"><?= count($visibleProducts) + 1 ?> producten</p>
+  <p class="product-count"><?= count($visibleProducts) ?> producten</p>
   <p class="form-note">Voorbeeldassortiment voor deze schoolwebsite. Foto's zijn placeholders; namen, specificaties en prijzen zijn demo-inhoud.</p>
   <section class="product-list" aria-label="Assortiment">
     <?php foreach ($visibleProducts as $id => $product): ?>
