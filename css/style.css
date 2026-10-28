@@ -885,7 +885,7 @@ button {
 }
 
 .light-mode .brand img {
-  filter: drop-shadow(0 2px 5px #160d2580);
+  filter: brightness(.52) saturate(1.5);
 }
 
 .light-mode .site-form input:not([type=checkbox]),
@@ -1233,11 +1233,8 @@ button {
 }
 
 .site-header { background: linear-gradient(90deg, #0f0b16 0%, #21182c 25%, #24272c 58%); }
-.light-mode .site-header { background: linear-gradient(90deg, #393042 0%, #5b4868 16%, #f3eff8 30%); }
-
-@media (max-width: 700px) {
-  .light-mode .site-header {
-    background: linear-gradient(90deg, #393042, #5b4868 40%, #f3eff8 75%);
-  }
-
+.light-mode .site-header {
+  background: linear-gradient(90deg, #e8e1ee, #f3eff8 45%, #faf9fc);
+  box-shadow: 0 4px 16px rgba(50, 30, 65, .06);
 }
+
