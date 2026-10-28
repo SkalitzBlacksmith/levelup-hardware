@@ -12,7 +12,7 @@ $products = [
         'name' => 'Gaming Laptop X1',
         'category' => 'systemen',
         'price' => 1499,
-        'description' => 'Speel je favoriete games op een snel 144 Hz scherm. Met 32 GB RAM en een 1 TB SSD heb je ruimte voor je games en schoolwerk.',
+        'description' => 'Speel je favoriete games op een snel 144 Hz scherm. Met 32 GB RAM en een 1 TB SSD heb je ruimte voor je games en bestanden.',
         'image' => 'assets/laptop.webp',
         'alt' => 'Gaming Laptop X1',
         'specs' => ['Processor' => 'Intel Core i7', 'Videokaart' => 'RTX 4060 8 GB', 'Geheugen' => '32 GB DDR5', 'Opslag' => '1 TB NVMe SSD', 'Scherm' => '15,6 inch Full HD, 144 Hz']

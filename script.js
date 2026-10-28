@@ -45,6 +45,11 @@ if (themeButton) {
 
 const newsletterModal = document.querySelector("#newsletter-modal");
 if (newsletterModal) {
+  const openNewsletterFromLink = () => {
+    if (location.hash === "#nieuwsbrief" && !newsletterModal.open) newsletterModal.showModal();
+  };
+  openNewsletterFromLink();
+  window.addEventListener("hashchange", openNewsletterFromLink);
   document.querySelectorAll("[data-open-newsletter]").forEach((button) => {
     button.addEventListener("click", () => newsletterModal.showModal());
   });
