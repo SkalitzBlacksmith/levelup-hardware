@@ -38,7 +38,7 @@ if (themeButton) {
   themeButton.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
     const theme = document.body.classList.contains("light-mode") ? "light" : "dark";
-    try { localStorage.setItem("levelup-them", theme); } catch (error) 
+    try { localStorage.setItem("levelup-theme", theme); } catch (error) { /* Het thema werkt ook zonder opslag. */ }
     updateThemeButton();
   });
 }

@@ -6,7 +6,7 @@
     <input type="hidden" name="token" value="<?= htmlspecialchars($_SESSION['token'], ENT_QUOTES, 'UTF-8') ?>">
     <label for="newsletter-name">Naam</label>
     <input id="newsletter-name" name="naam" type="text" required maxlength="80" autocomplete="name">
-    <label for="newsletter-mail">E-mailadres</label>
+    <label for="newsletter-email">E-mailadres</label>
     <input id="newsletter-email" name="email" type="email" required maxlength="254" autocomplete="email">
     <label class="checkbox-label"><input type="checkbox" name="toestemming" value="1" required> Ik wil de nieuwsbrief ontvangen.</label>
     <p class="form-note">Je inschrijving wordt opgeslagen. Deze schoolwebsite verstuurt nog geen nieuwsbrieven.</p>

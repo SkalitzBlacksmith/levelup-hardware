@@ -54,8 +54,8 @@ include __DIR__ . "/includes/header.php";
           <label for="contact-name">Naam</label><input id="contact-name" name="naam" type="text" required maxlength="80" autocomplete="name" value="<?= htmlspecialchars($name) ?>">
           <label for="contact-email">E-mailadres</label><input id="contact-email" name="email" type="email" required maxlength="254" autocomplete="email" value="<?= htmlspecialchars($email) ?>">
           <label for="contact-subject">Onderwerp</label><input id="contact-subject" name="onderwerp" type="text" required maxlength="100" value="<?= htmlspecialchars($subject) ?>">
-          <label for="contact-message">Bericht (maximaal 1000 tekens)</label><textarea id="contact-message" name="bericht" rows="6" required maxlength="250"><?= htmlspecialchars($message) ?></textarea>
-          <div class="form-actions"><button class="primary-button" type="submit">Verstuur bericht</button><button class="secondary-button" type="button">Wis formulier</button></div>
+          <label for="contact-message">Bericht (maximaal 1000 tekens)</label><textarea id="contact-message" name="bericht" rows="6" required maxlength="1000"><?= htmlspecialchars($message) ?></textarea>
+          <div class="form-actions"><button class="primary-button" type="submit">Verstuur bericht</button><button class="secondary-button" type="reset">Wis formulier</button></div>
         </form>
       <?php endif; ?>
     </div>
