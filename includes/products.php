@@ -40,7 +40,7 @@ $products = [
         'category' => 'monitoren',
         'price' => 449,
         'description' => 'Een gebogen 34 inch monitor voor racegames en multitasking. Het 165 Hz paneel heeft een resolutie van 3440 x 1440.',
-        'image' => 'assets/products/monitor.jpg',
+        'image' => 'assets/products/monitor.webp',
         'alt' => 'LevelUp Curve 34',
         'specs' => ['Formaat' => '34 inch curved', 'Resolutie' => '3440 x 1440', 'Verversing' => '165 Hz', 'Paneel' => 'VA', 'Aansluitingen' => 'DisplayPort en HDMI']
     ],
@@ -49,7 +49,7 @@ $products = [
         'category' => 'monitoren',
         'price' => 799,
         'description' => 'Diepe zwarttinten en scherpe beelden op een 27 inch 4K OLED-scherm. Met 144 Hz voor soepel gamen.',
-        'image' => 'assets/products/monitor.jpg',
+        'image' => 'assets/products/monitor.webp',
         'alt' => 'LevelUp OLED 27',
         'specs' => ['Formaat' => '27 inch', 'Resolutie' => '3840 x 2160', 'Verversing' => '144 Hz', 'Paneel' => 'OLED', 'Aansluitingen' => 'HDMI 2.1 en DisplayPort']
     ],
@@ -67,7 +67,7 @@ $products = [
         'category' => 'randapparatuur',
         'price' => 89,
         'description' => 'Een compact mechanisch toetsenbord met rode switches en RGB. Het 60% formaat geeft je muis meer ruimte.',
-        'image' => 'assets/products/keyboard.jpg',
+        'image' => 'assets/products/keyboard.webp',
         'alt' => 'LevelUp Keys 60',
         'specs' => ['Formaat' => '60%', 'Switches' => 'Lineair rood', 'Indeling' => 'QWERTY US', 'Aansluiting' => 'USB-C kabel', 'Verlichting' => 'RGB']
     ],
@@ -76,7 +76,7 @@ $products = [
         'category' => 'randapparatuur',
         'price' => 59,
         'description' => 'Een bedrade gamingmuis voor snelle shooters. Stel de optische sensor in tot 16.000 DPI en gebruik de zes programmeerbare knoppen.',
-        'image' => 'assets/products/mouse.jpg',
+        'image' => 'assets/products/mouse.webp',
         'alt' => 'LevelUp Aim Mouse',
         'specs' => ['Sensor' => 'Optisch, 16.000 DPI', 'Gewicht' => '65 gram', 'Knoppen' => '6', 'Aansluiting' => 'USB', 'Polling rate' => '1000 Hz']
     ],
@@ -85,7 +85,7 @@ $products = [
         'category' => 'componenten',
         'price' => 599,
         'description' => 'Upgrade je desktop met een RTX 4070 met 12 GB videogeheugen en twee ventilatoren. Controleer vooraf je voeding en de ruimte in je kast.',
-        'image' => 'assets/products/gpu.jpg',
+        'image' => 'assets/products/gpu.webp',
         'alt' => 'LevelUp RTX Upgrade',
         'specs' => ['Chip' => 'RTX 4070', 'Geheugen' => '12 GB GDDR6X', 'Koeling' => 'Twee ventilatoren', 'Voeding advies' => '650 watt', 'Aansluitingen' => 'HDMI en DisplayPort']
     ],
@@ -94,7 +94,7 @@ $products = [
         'category' => 'componenten',
         'price' => 69,
         'description' => 'Houd je processor koel met een dubbele torenkoeler en twee 120 mm ventilatoren. Geschikt voor AM5 en LGA1700.',
-        'image' => 'assets/products/cooler.jpg',
+        'image' => 'assets/products/cooler.webp',
         'alt' => 'LevelUp Air Cooler',
         'specs' => ['Type' => 'Luchtkoeler, dubbele toren', 'Ventilatoren' => '2 x 120 mm', 'Sockets' => 'AM5 en LGA1700', 'Hoogte' => '160 mm', 'Aansturing' => 'PWM']
     ],
@@ -103,7 +103,7 @@ $products = [
         'category' => 'accessoires',
         'price' => 29,
         'description' => 'Een zachte bureaumat van 900 x 400 mm voor je muis en toetsenbord. De rubberen onderkant houdt de mat op zijn plek.',
-        'image' => 'assets/products/desk.jpg',
+        'image' => 'assets/products/desk.webp',
         'alt' => 'LevelUp Deskmat XXL',
         'specs' => ['Afmetingen' => '900 x 400 mm', 'Dikte' => '3 mm', 'Onderkant' => 'Antislip rubber', 'Rand' => 'Gestikt', 'Kleur' => 'Zwart']
     ],
@@ -112,7 +112,7 @@ $products = [
         'category' => 'accessoires',
         'price' => 39,
         'description' => 'Sluit meer accessoires aan met vier USB-A poorten. De aluminium USB-C hub past bij je laptop of desktop.',
-        'image' => 'assets/products/desk.jpg',
+        'image' => 'assets/products/desk.webp',
         'alt' => 'LevelUp USB Hub',
         'specs' => ['Ingang' => 'USB-C', 'Poorten' => '4 x USB-A', 'Snelheid' => 'Tot 5 Gbit/s', 'Materiaal' => 'Aluminium', 'Kabel' => '20 cm']
     ],
