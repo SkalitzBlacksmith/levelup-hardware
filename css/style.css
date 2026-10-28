@@ -320,6 +320,7 @@ button {
 }
 
 .product-photo {
+  display: block;
   width: 224px;
   aspect-ratio: 1;
   border-radius: 14px;
