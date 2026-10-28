@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/includes/session.php';
 $pageTitle = "Nieuwsbrief";
 $activePage = "";
 $name = "";
@@ -10,6 +11,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($name === "" || strlen($name) > 80) $errors[] = "Vul een naam van maximaal 80 tekens in.";
     if (strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Vul een geldig e-mailadres in.";
     if (($_POST["toestemming"] ?? "") !== "1") $errors[] = "Geef toestemming voor de nieuwsbrief.";
+    $token = is_string($_POST['token'] ?? null) ? $_POST['token'] : '';
+    if (!hash_equals($_SESSION['token'], $token)) $errors[] = "De sessie is verlopen. Probeer opnieuw.";
+    if (!$errors) {
+        try {
+            require __DIR__ . '/includes/database.php';
+            $query = $db->prepare('INSERT INTO nieuwsbrief (naam, email) VALUES (?, ?) ON DUPLICATE KEY UPDATE naam = VALUES(naam)');
+            $query->execute([$name, $email]);
+            $_SESSION['newsletter_sent'] = true;
+            $_SESSION['token'] = bin2hex(random_bytes(32));
+            header('Location: nieuwsbrief.php?verstuurd=1', true, 303);
+            exit;
+        } catch (Throwable $exception) {
+            error_log('Nieuwsbrief opslaan mislukt: ' . $exception->getMessage());
+            $errors[] = "Je inschrijving kon niet worden opgeslagen. Probeer het later opnieuw.";
+        }
+    }
+} elseif (isset($_GET['verstuurd'], $_SESSION['newsletter_sent'])) {
+    unset($_SESSION['newsletter_sent']);
 } else {
     $errors[] = "Schrijf je eerst in via het nieuwsbriefformulier.";
 }
@@ -22,9 +41,8 @@ include __DIR__ . "/includes/header.php";
     <div class="form-errors"><ul><?php foreach ($errors as $error): ?><li><?= htmlspecialchars($error) ?></li><?php endforeach; ?></ul></div>
     <button class="primary-button" type="button" data-open-newsletter>Probeer opnieuw</button>
   <?php else: ?>
-    <h1>Bedankt, <?= htmlspecialchars($name) ?>!</h1>
-    <p><?= htmlspecialchars($name) ?>, je bent ingeschreven voor de nieuwsbrief.</p>
-    <p>Je gebruikte e-mailadres: <?= htmlspecialchars($email) ?>.</p>
+    <h1>Bedankt voor je inschrijving!</h1>
+    <p>Je inschrijving is opgeslagen.</p>
   <?php endif; ?>
   <a class="primary-button" href="index.php">Terug naar home</a>
 </main>

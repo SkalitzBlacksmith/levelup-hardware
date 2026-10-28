@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/session.php';
 $pageTitle = $pageTitle ?? "Home";
 $pageDescription = $pageDescription ?? "Gaming hardware en persoonlijk advies in Breda.";
 $activePage = $activePage ?? "";
