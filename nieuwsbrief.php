@@ -8,7 +8,7 @@ $errors = [];
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = is_string($_POST["naam"] ?? null) ? trim($_POST["naam"]) : "";
     $email = is_string($_POST["email"] ?? null) ? trim($_POST["email"]) : "";
-    if ($name === "" || strlen($name) > 80) $errors[] = "Vul een naam van maximaal 80 tekens in.";
+    if ($name === "" || mb_strlen($name) > 80) $errors[] = "Vul een naam van maximaal 80 tekens in.";
     if (strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Vul een geldig e-mailadres in.";
     if (($_POST["toestemming"] ?? "") !== "1") $errors[] = "Geef toestemming voor de nieuwsbrief.";
     $token = is_string($_POST['token'] ?? null) ? $_POST['token'] : '';
@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header('Location: nieuwsbrief.php?verstuurd=1', true, 303);
             exit;
         } catch (Throwable $exception) {
+            http_response_code(503);
             error_log('Nieuwsbrief opslaan mislukt: ' . $exception->getMessage());
             $errors[] = "Je inschrijving kon niet worden opgeslagen. Probeer het later opnieuw.";
         }
@@ -35,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     $errors[] = "Schrijf je eerst in via het nieuwsbriefformulier.";
 }
-if ($errors) http_response_code(422);
+if ($errors && http_response_code() !== 503) http_response_code(422);
 include __DIR__ . "/includes/header.php";
 ?>
 <main class="page-shell thank-you">

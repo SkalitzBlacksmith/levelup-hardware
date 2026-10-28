@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = is_string($_POST["email"] ?? null) ? trim($_POST["email"]) : "";
     $subject = is_string($_POST["onderwerp"] ?? null) ? trim($_POST["onderwerp"]) : "";
     $message = is_string($_POST["bericht"] ?? null) ? trim($_POST["bericht"]) : "";
-    if ($name === "" || strlen($name) > 80) $errors[] = "Vul een naam van maximaal 80 tekens in.";
+    if ($name === "" || mb_strlen($name) > 80) $errors[] = "Vul een naam van maximaal 80 tekens in.";
     if (strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Vul een geldig e-mailadres in.";
-    if ($subject === "" || strlen($subject) > 100) $errors[] = "Vul een onderwerp van maximaal 100 tekens in.";
-    if ($message === "" || strlen($message) > 1000) $errors[] = "Vul een bericht van maximaal 1000 tekens in.";
+    if ($subject === "" || mb_strlen($subject) > 100) $errors[] = "Vul een onderwerp van maximaal 100 tekens in.";
+    if ($message === "" || mb_strlen($message) > 1000) $errors[] = "Vul een bericht van maximaal 1000 tekens in.";
     $token = is_string($_POST['token'] ?? null) ? $_POST['token'] : '';
     if (time() - ($_SESSION['last_contact'] ?? 0) < 30) $errors[] = 'Je hebt zojuist iets verstuurd. Wacht even voordat je opnieuw verstuurt.';
     if (!hash_equals($_SESSION['token'], $token)) $errors[] = "De sessie is verlopen. Probeer opnieuw.";
@@ -29,11 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header('Location: contact.php?verstuurd=1', true, 303);
             exit;
         } catch (Throwable $exception) {
+            http_response_code(503);
             error_log('Contact opslaan mislukt: ' . $exception->getMessage());
             $errors[] = "Je bericht kon niet worden opgeslagen. Probeer het later opnieuw.";
         }
     }
-    if ($errors) http_response_code(422);
+    if ($errors && http_response_code() !== 503) http_response_code(422);
 }
 if (isset($_GET['verstuurd'], $_SESSION['contact_sent'])) {
     $submitted = true;
