@@ -46,7 +46,6 @@ include __DIR__ . "/includes/header.php";
   </form>
   <?php if (!$visibleProducts): ?><p>Geen producten gevonden. Probeer een andere zoekterm.</p><?php endif; ?>
   <p class="product-count"><?= count($visibleProducts) ?> producten</p>
-  <p class="form-note">Voorbeeldassortiment voor deze schoolwebsite. Foto's zijn placeholders; namen, specificaties en prijzen zijn demo-inhoud.</p>
   <section class="product-list" aria-label="Assortiment">
     <?php foreach ($visibleProducts as $id => $product): ?>
       <article class="product-row">

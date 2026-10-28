@@ -9,7 +9,7 @@
     <label for="newsletter-email">E-mailadres</label>
     <input id="newsletter-email" name="email" type="email" required maxlength="254" autocomplete="email">
     <label class="checkbox-label"><input type="checkbox" name="toestemming" value="1" required> Ik wil de nieuwsbrief ontvangen.</label>
-    <p class="form-note">Je inschrijving wordt opgeslagen. Deze schoolwebsite verstuurt nog geen nieuwsbrieven.</p>
+    <p class="form-note">Je inschrijving wordt opgeslagen. Er worden op dit moment geen nieuwsbrieven verstuurd.</p>
     <button class="primary-button" type="submit">Schrijf je in</button>
   </form>
 </dialog>

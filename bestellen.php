@@ -39,7 +39,7 @@ if ($errors && http_response_code() !== 503) http_response_code(422);
 include __DIR__ . '/includes/header.php';
 ?>
 <main class="page-shell thank-you">
-<?php if (!empty($sent)): ?><h1>Aanvraag ontvangen</h1><p>Bedankt, <?= htmlspecialchars($receipt['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>. Je aanvraagnummer is <?= (int) $receipt['id'] ?>.</p><p>Je bestelaanvraag is opgeslagen. Dit is een voorbeeldassortiment; er is geen betaling gedaan.</p><span id="order-sent" hidden></span>
+<?php if (!empty($sent)): ?><h1>Aanvraag ontvangen</h1><p>Bedankt, <?= htmlspecialchars($receipt['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>. Je aanvraagnummer is <?= (int) $receipt['id'] ?>.</p><p>Je bestelaanvraag is opgeslagen. Er is geen betaling gedaan.</p><span id="order-sent" hidden></span>
 <?php else: ?><h1>Controleer je aanvraag</h1><div class="form-errors" role="alert"><ul><?php foreach ($errors as $error): ?><li><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></li><?php endforeach; ?></ul></div><?php endif; ?>
 <a class="primary-button" href="producten.php">Terug naar producten</a></main>
 <?php include __DIR__ . '/includes/footer.php'; ?>

@@ -23,7 +23,7 @@ include __DIR__ . "/includes/header.php";
         <p class="product-price">€ <?= number_format($product['price'], 2, ',', '.') ?></p>
         <p><?= htmlspecialchars($product['description']) ?></p>
         <button class="add-to-cart" type="button" data-product="<?= $id ?>" data-name="<?= htmlspecialchars($product['name']) ?>" data-price="<?= $product['price'] ?>">Voeg toe aan winkelwagen</button>
-        <p class="form-note">Voorbeeldproduct en placeholderfoto. Geen echte bestelling.</p>
+        <p class="form-note">Via de winkelwagen kun je een bestelaanvraag indienen.</p>
       </div>
     </section>
     <section class="spec-section"><h2>Specificaties</h2>

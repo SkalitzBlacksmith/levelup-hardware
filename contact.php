@@ -45,7 +45,7 @@ include __DIR__ . "/includes/header.php";
 <main class="page-shell">
   <section class="page-hero"><h1 class="home-glow" data-text="Contact">Contact</h1><p class="hero-subtitle">We helpen je graag</p></section>
   <section class="content-grid contact-layout">
-    <div><h2>Advies voor jouw setup</h2><p>Een vraag over onze gear, een upgrade of onderhoud? Vul het formulier in.</p><address>Terheijdenseweg 350<br>4826 AA Breda</address><p class="form-note">Voorbeeldadres voor deze schoolwebsite.</p><a class="detail-link" href="over-ons.php">Bekijk de locatie</a></div>
+    <div><h2>Advies voor jouw setup</h2><p>Een vraag over onze gear, een upgrade of onderhoud? Vul het formulier in.</p><address>Terheijdenseweg 350<br>4826 AA Breda</address><a class="detail-link" href="over-ons.php">Bekijk de locatie</a></div>
     <div>
       <?php if ($submitted): ?>
         <h2>Bedankt!</h2><p>Je bericht is opgeslagen.</p>

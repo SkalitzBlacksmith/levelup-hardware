@@ -25,7 +25,6 @@ include __DIR__ . "/includes/header.php";
     <section class="visit-section">
       <div class="visit-copy">
         <h2>Hier vind je ons</h2>
-        <p>(Dit is een voorbeeldadres!)</p>
         <address>
           Terheijdenseweg 350<br>
           4826 AA Breda
