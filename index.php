@@ -23,7 +23,7 @@ include __DIR__ . "/includes/header.php";
 
     <section class="content-grid home-reasons">
       <div class="photo-frame store-photo">
-        <img src="assets/storefront.png" alt="Daan in de LevelUp Hardware winkel in Breda" width="884" height="477">
+        <img src="assets/storefront.webp" alt="Daan in de LevelUp Hardware winkel in Breda" width="884" height="477">
       </div>
       <ul class="reasons-list">
         <li><strong>Curated Selectie:</strong> Wij verkopen alleen laptops waar we zelf achter staan. Geen concessies op bouwkwaliteit of koeling.</li>

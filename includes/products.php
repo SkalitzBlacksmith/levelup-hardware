@@ -15,14 +15,14 @@ $products = [
         'description' => 'Speel je favoriete games op een snel 144 Hz scherm. Met 32 GB RAM en een 1 TB SSD heb je ruimte voor je games en schoolwerk.',
         'image' => 'assets/laptop.webp',
         'alt' => 'Gaming Laptop X1',
-        'specs' => ['Processor' => 'Intel Core i7', 'Videokaart' => 'RTX 4060 8 GB', 'Geheugen' => '16 GB DDR5', 'Opslag' => '1 TB NVMe SSD', 'Scherm' => '15,6 inch Full HD, 144 Hz']
+        'specs' => ['Processor' => 'Intel Core i7', 'Videokaart' => 'RTX 4060 8 GB', 'Geheugen' => '32 GB DDR5', 'Opslag' => '1 TB NVMe SSD', 'Scherm' => '15,6 inch Full HD, 144 Hz']
     ],
     'pc' => [
         'name' => 'Custom Gaming PC',
         'category' => 'systemen',
         'price' => 1999,
         'description' => 'Een complete desktop voor 1440p gaming, met een Ryzen 7, 32 GB RAM en een RTX 4070. Inclusief Wi-Fi en RGB-verlichting.',
-        'image' => 'assets/pc.png',
+        'image' => 'assets/pc.webp',
         'alt' => 'Custom Gaming PC',
         'specs' => ['Processor' => 'AMD Ryzen 7', 'Videokaart' => 'RTX 4070 12 GB', 'Geheugen' => '32 GB DDR5', 'Opslag' => '2 TB NVMe SSD', 'Verbinding' => 'Wi-Fi 6 en ethernet']
     ],
@@ -31,7 +31,7 @@ $products = [
         'category' => 'systemen',
         'price' => 2399,
         'description' => 'Stream, game en monteer video op dezelfde desktop. De Ryzen 9 en 64 GB RAM bieden extra ruimte voor zware projecten.',
-        'image' => 'assets/pc.png',
+        'image' => 'assets/pc.webp',
         'alt' => 'LevelUp Stream Station',
         'specs' => ['Processor' => 'AMD Ryzen 9', 'Videokaart' => 'RTX 4070 Super 12 GB', 'Geheugen' => '64 GB DDR5', 'Opslag' => '2 TB NVMe SSD', 'Koeling' => '240 mm waterkoeling']
     ],
@@ -68,7 +68,7 @@ $products = [
         'price' => 89,
         'description' => 'Een compact mechanisch toetsenbord met rode switches en RGB. Het 60% formaat geeft je muis meer ruimte.',
         'image' => 'assets/products/keyboard.jpg',
-        'alt' => '',
+        'alt' => 'LevelUp Keys 60',
         'specs' => ['Formaat' => '60%', 'Switches' => 'Lineair rood', 'Indeling' => 'QWERTY US', 'Aansluiting' => 'USB-C kabel', 'Verlichting' => 'RGB']
     ],
     'mouse' => [

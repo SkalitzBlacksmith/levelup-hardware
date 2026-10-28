@@ -16,7 +16,7 @@ $activePage = $activePage ?? "";
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=<?= filemtime(__DIR__ . '/../css/style.css') ?>">
   <script src="script.js" defer></script>
   <?php if (!empty($useCart)): ?><script src="cart.js" defer></script><?php endif; ?>
 
@@ -25,7 +25,7 @@ $activePage = $activePage ?? "";
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.php">
-        <img src="assets/logo.png" alt="LevelUp Hardware" width="698" height="338">
+        <img src="assets/logo.webp" alt="LevelUp Hardware" width="698" height="338">
       </a>
       <button class="menu-toggle" type="button" aria-label="Menu openen" aria-controls="main-nav" aria-expanded="false">
         <span></span><span></span><span></span>
