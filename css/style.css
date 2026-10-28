@@ -832,7 +832,13 @@ button {
 }
 
 .light-mode .main-nav {
-  background: #f3eff8;
+  background: transparent;
+}
+
+@media (max-width: 700px) {
+  .light-mode .main-nav {
+    background: #f3eff8;
+  }
 }
 
 .light-mode .theme-toggle, .light-mode .menu-toggle {
