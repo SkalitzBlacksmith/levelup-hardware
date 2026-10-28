@@ -56,3 +56,7 @@ if (newsletterModal) {
     }
   });
 }
+
+if (document.querySelector('#order-sent')) {
+  try { localStorage.removeItem('levelup-cart'); } catch (error) {}
+}

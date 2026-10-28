@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include __DIR__ . '/includes/header.php';
 ?>
 <main class="page-shell thank-you">
-<?php if (!empty($sent)): ?><h1>Aanvraag ontvangen</h1><p>Je bestelaanvraag is opgeslagen. Dit is een voorbeeldassortiment; er is geen betaling gedaan.</p><script>try { localStorage.removeItem('levelup-cart'); } catch (error) {}</script>
+<?php if (!empty($sent)): ?><h1>Aanvraag ontvangen</h1><p>Je bestelaanvraag is opgeslagen. Dit is een voorbeeldassortiment; er is geen betaling gedaan.</p><span id="order-sent" hidden></span>
 <?php else: ?><h1>Controleer je aanvraag</h1><div class="form-errors" role="alert"><ul><?php foreach ($errors as $error): ?><li><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></li><?php endforeach; ?></ul></div><?php endif; ?>
 <a class="primary-button" href="producten.php">Terug naar producten</a></main>
 <?php include __DIR__ . '/includes/footer.php'; ?>
