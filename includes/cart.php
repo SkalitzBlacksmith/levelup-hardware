@@ -9,6 +9,6 @@
     <label for="order-name">Naam</label><input id="order-name" name="naam" maxlength="80" autocomplete="name" required>
     <label for="order-email">E-mailadres</label><input id="order-email" name="email" type="email" maxlength="254" autocomplete="email" required>
     <button class="primary-button" type="submit">Bestelaanvraag versturen</button>
-    <p class="form-note">Je bestelaanvraag wordt opgeslagen; er vindt geen betaling plaats.</p>
+    <p class="form-note">Je bestelaanvraag wordt verwerkt</p>
   </form>
 </section>
