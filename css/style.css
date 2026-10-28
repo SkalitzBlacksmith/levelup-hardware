@@ -1133,3 +1133,6 @@ button {
     flex-shrink: 0;
   }
 }
+
+.site-header { background: linear-gradient(90deg, #15131d, #24272c 55%); }
+.light-mode .site-header { background: linear-gradient(90deg, #c6b7d3, #f3eff8 55%); }
