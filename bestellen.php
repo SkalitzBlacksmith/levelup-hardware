@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $query = $db->prepare('INSERT INTO bestellingen (naam, email, producten, totaal) VALUES (?, ?, ?, ?)');
             $query->execute([$name, $email, json_encode($order, JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR), $totalCents / 100]);
             $_SESSION['last_order'] = time();
-            $_SESSION['order_sent'] = ['name' => $name, 'id' => $db->lastInsertId()];
+            $_SESSION['order_sent'] = ['name' => $name, 'id' => $db->lastInsertId(), 'items' => $order, 'total' => $totalCents / 100];
             $_SESSION['token'] = bin2hex(random_bytes(32));
             header('Location: bestellen.php?verstuurd=1', true, 303); exit;
         } catch (Throwable $exception) { error_log('Bestelling opslaan mislukt: ' . $exception->getMessage()); http_response_code(503); $errors[] = 'Je aanvraag kon niet worden opgeslagen. Probeer het later opnieuw.'; }
@@ -39,7 +39,15 @@ if ($errors && http_response_code() !== 503) http_response_code(422);
 include __DIR__ . '/includes/header.php';
 ?>
 <main class="page-shell thank-you">
-<?php if (!empty($sent)): ?><h1>Aanvraag ontvangen</h1><p>Bedankt, <?= htmlspecialchars($receipt['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>. Je aanvraagnummer is <?= (int) $receipt['id'] ?>.</p><p>Je bestelaanvraag is opgeslagen. Er is geen betaling gedaan.</p><span id="order-sent" hidden></span>
+<?php if (!empty($sent)): ?>
+<section class="order-confirmation" aria-labelledby="order-title">
+  <p class="confirmation-label">Gelukt</p>
+  <h1 id="order-title">Je bestelaanvraag is ontvangen</h1>
+  <p>Bedankt, <?= htmlspecialchars($receipt['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>. Je aanvraag is opgeslagen onder nummer <strong>#<?= (int) $receipt['id'] ?></strong>.</p>
+  <ul><?php foreach ($receipt['items'] as $item): ?><li><?= (int) $item['aantal'] ?>&times; <?= htmlspecialchars($item['product'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></li><?php endforeach; ?></ul>
+  <p class="confirmation-total">Totaal: &euro; <?= number_format($receipt['total'], 2, ',', '.') ?></p>
+  <p>Je winkelwagen is leeggemaakt. Er is geen betaling gedaan.</p>
+</section><span id="order-sent" hidden></span>
 <?php else: ?><h1>Controleer je aanvraag</h1><div class="form-errors" role="alert"><ul><?php foreach ($errors as $error): ?><li><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></li><?php endforeach; ?></ul></div><?php endif; ?>
 <a class="primary-button" href="producten.php">Terug naar producten</a></main>
 <?php include __DIR__ . '/includes/footer.php'; ?>
