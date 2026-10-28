@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS levelup_hardware CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE levelup_hardware;
+
 CREATE TABLE IF NOT EXISTS contactberichten (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     naam VARCHAR(80) NOT NULL,
